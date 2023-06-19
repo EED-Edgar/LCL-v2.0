@@ -6,10 +6,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-html {
-    padding-left: 0;    
+    overflow-x: hidden;
 }
 
 :root {
@@ -35,8 +32,8 @@ html {
         align-items: center;
         background-color: var(--azul-escuro);
         height: 8vh;
-        width: 100%;
-        z-index: 99999;
+        width: 56.2vh;
+        z-index: 999;
     
     }
     
@@ -44,9 +41,10 @@ html {
         position: fixed;
         background-color: #173857;
         transition: all 0.2s ease;
-        height: 6vh;
+        height: 7vh;
         top: -1px;
         width: 100vw;
+        overflow-y: hidden;
     }
 
     #menu a {
@@ -515,9 +513,14 @@ html {
     
 }
 
+#footer .mapa {
+    display: none;
+}
+
 /*===FOOTER===*/
 
 #footer {
+    overflow: hidden;
     margin-top: 20px;
     background-color: var(--azul-escuro);
     
@@ -528,6 +531,7 @@ html {
     grid-template-areas: 'logo links'
     'social_midia links'
     'reserved reserved';
+    overflow-y: hidden;
 }
 
 #footer .logo {
@@ -557,6 +561,7 @@ html {
     font-weight: 700;
     margin-top: 20%;
     height: 70%;
+    overflow-y: hidden;
 }
 
 #footer .links a {
@@ -565,6 +570,7 @@ html {
     padding: 0 0 30px 0;
     color: var(--branco);
     text-decoration: none;
+    overflow-y: hidden;
 }
 
 #footer .reserved {
@@ -577,7 +583,9 @@ html {
 /*VERSÃO TABLET - Editar usando ipad air*/
 
 @media screen and (max-width: 1280px) and (min-width: 768px) {
-    
+    #mobile_menu {
+        display: none;
+    }
 }
 
 /*VERSÃO DESKTOP*/
