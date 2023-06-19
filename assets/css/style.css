@@ -7,6 +7,7 @@
     padding: 0;
     box-sizing: border-box;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 :root {
@@ -20,19 +21,15 @@
         font-family: 'Rubik', sans-serif;
     }
 
-    body, header {
-        align-self: center;
-    }
     
     /*======HEADER======*/
     header #mobile_menu {
-        position: initial;
         display: flex;
         justify-content: space-between;
         align-items: center;
         background-color: var(--azul-escuro);
         height: 8vh;
-        width: 56.2vh;
+        width: 100vw;
         z-index: 999;
     
     }
@@ -112,6 +109,10 @@
         z-index: 9999;
     }
 
+    .menu_desktop {
+        display: none;
+    }
+
     @keyframes menu_aparecendo {
         from {
             height: 0vh;
@@ -139,8 +140,10 @@
 
 #cursos-ofertados-section h1{
     text-align: center;
-    padding-bottom: 20px;
-    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
 }
 
 #cards-container {
@@ -352,6 +355,9 @@
 /*==== NOSSA EQUIPE ====*/
 #equipe {
     text-align: center;
+    width: 100vw;
+    overflow-y: hidden;
+    height: 100%;
 }
 
 #equipe .tittle {
@@ -369,7 +375,8 @@
 #equipe .card-a,
 #equipe .card-b {
     display: grid;
-    margin-bottom: 1.25rem;
+    height: 30vh;
+    margin-bottom: 25px;
 }
 
 #equipe .card-a {
@@ -391,6 +398,11 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin-right: 20px;
+}
+
+#equipe .card-a .card_content {
+    padding-left: 5%;
 }
 
 #equipe .card-b .card_content {
@@ -405,9 +417,14 @@
 
 #equipe .card-a .card_content .card_text h3,
 #equipe .card-b .card_content .card_text h3{
-    font-size: 16px;
+    font-size: 12px;
     text-align: justify;
     font-weight: normal;
+}
+
+#equipe .card_img img {
+    width: 45vw;
+    height: 25vh;
 }
 
 /*===FAQs===*/
@@ -592,4 +609,289 @@
 
 @media screen and (min-width: 1300px) {
 
+    header #mobile_menu{
+        display: none;
+    }
+    .menu_desktop {
+        display: flex;
+        position: fixed;
+        background-color: #173857;
+        align-items: center;
+        height: 10vh;
+        width: 100%;
+        font-size: larger;
+        z-index: 99999;
+    }
+
+    .conteudo {
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+        background-color: #173857;
+        align-items: center;
+        height: 10vh;
+        width: 100%;
+    }
+    
+    .menu_desktop img{
+        width: 110%;
+        align-self: center;
+    }
+
+    .menu_desktop ul {
+        margin-left: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .menu_desktop ul li {
+        margin-left: 30px;
+        transition: all 1s;
+    }
+
+    .conteudo ul li:hover{
+        color: var(--laranja);
+        transform: scale(1.01);
+    }
+
+    .conteudo ul li a:hover {
+        color: #ff8400;
+    }
+
+    .conteudo ul li a {
+        transition: all 0.4s ease;
+    }
+
+
+    a[type='button']{
+        text-decoration: none;
+        color: #FFF;
+        margin-left: 100px;
+        background-color: #ff8400;
+        padding: 1% 2%;
+        border-radius: 8%;
+        transition: all 0.4s ease;
+    }
+
+    a[type='button']:hover{
+        transform: scale(1.1);
+        background-color: #2b659c;
+    }
+
+    .menu_desktop ul li a{
+        text-decoration: none;
+        color: var(--branco);
+    }
+
+    #welcome-section {
+        background: url(../img/homepage.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 60vh;
+        overflow-y: hidden;
+    }
+    
+    #welcome-card{
+        justify-content: center;
+        height: 17em;
+        width: 20em;
+        border-radius: 15%;
+        background-color: rgba(255, 255, 255, 0.568);
+        padding: 1em;
+        box-shadow: 4px 4px rgba(58, 58, 58, 0.651);
+    }
+
+    #cursos-ofertados-section{
+        background-color: var(--azul-escuro);
+        height: 70vh;
+        margin: 0.6em;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #cursos-ofertados-section h1{
+        font-size: 2em;
+        color: var(--laranja);
+    }
+
+    #cursos-ofertados-section hr{
+        width: 60%;
+        color: var(--laranja);
+    }
+
+    #cards-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        width: 80%;
+        height: 26em;
+        column-gap: 2em;
+        row-gap: 2em;
+        margin-top: 2em;
+    }
+
+    .card-curso{
+        transform: scale(1.3);
+    }
+
+    .card-curso:hover{
+        transition: transform 0.5seg;
+        transform: scale(1.35);
+    }
+    
+    
+    #como_aprende h1 {
+        margin-top: 30px;
+        font-size: 48px;
+    }
+
+    #como_aprende .cards{
+        display: flex;
+        flex-direction: row;
+    }
+
+    #como_aprende .cards .cardHow {
+        width: 50vw;
+        height: 30vh;
+    }
+    
+    #como_aprende .cards .cardHow {
+        text-align: center;
+        font-size: 16px;
+    }
+
+    #equipe .tittle h1 {
+        font-size: 48px;
+    }
+
+    .content-equipe {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    #equipe .card-a,
+    #equipe .card-b{
+        display: flex;
+        flex-direction: column;
+        width: 350px;
+        height: 600px;
+    }
+
+    #equipe .card-a .card_content,
+    #equipe .card-b .card_content {
+        grid-area: col-text;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 0px;
+    }
+
+    #equipe .card_img img{
+        width: 350px;
+        height: 325px;
+    }
+    
+    #equipe .card-a .card_content .card_text h3,
+    #equipe .card-b .card_content .card_text h3{
+        font-size: 20px;
+    }
+
+    #faq {
+        margin-bottom: 6%;
+    }
+
+    #faq .tittle{
+        font-size: 48px;
+    }
+    
+    #faq .question h3 {
+        font-size: 30px;
+    }
+
+    #faq a {
+        font-size: 20px;
+    }
+
+    #faq .answer p {
+        font-size: 25px;
+    }
+
+    #footer {
+        margin-top: 0;
+        height: 30vh;
+        grid-template-areas: 'logo link mapa'
+        'logo link mapa'
+        'logo link mapa';
+    }
+
+    #footer .logo img {
+        position: relative;
+        left: 165px;
+        margin-bottom: 20px;
+    }
+
+    #footer .logo::after {
+        position: relative;
+        content: "Centro de Línguas";
+        color: #ff8400;
+        text-align: center;
+        font-size: 26px;
+        left: 20px;
+    }
+
+    #footer .social_midia {
+        justify-content: initial;
+        margin-left: 7%;
+    }
+
+    #footer .social_midia a {
+        margin-top: 5%;
+        margin-left: 3%;
+    }
+
+    #footer .social_midia img {
+        width: 30px;
+    }
+
+    #footer .links {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        grid-area: links;
+        text-align: right;
+        font-weight: 700;
+        height: 70%;
+        overflow-y: hidden;
+        bottom: 50px;
+        right: 100px;
+    }
+
+    #footer .links a {
+        font-size: 16px;
+        text-align: end;
+        padding: 0 0 30px 0;
+        color: var(--branco);
+        text-decoration: none;
+        overflow-y: hidden;
+    }
+
+    #footer .mapa {
+        display: block;
+        position: relative;
+        left: 45%;
+        bottom: 225%;
+    }
+
+    #localizado {
+        display: none;
+    }
+    
 }
